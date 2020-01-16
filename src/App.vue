@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <!--<img alt="Vue logo" src="./assets/logo.png">-->
     <user></user>
-    <dept></dept>
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <!--<dept></dept>-->
+    <!--<el-button type="primary" round>主要按钮</el-button>-->
+    <!--<HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>-->
   </div>
 </template>
 
