@@ -1,12 +1,22 @@
 {
   "name": "vue-npm-modules-system",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --dest lib --target lib --name index ./src/packages/index.ts"
   },
+  "main": "lib/index.umd.min.js",
+  "typings": "types/index.d.ts",
+  "publishConfig": {
+    "registry": "http://10.201.71.204:8081/repository/npm/"
+  },
+  "files": [
+    "lib/**/*",
+    "types/*"
+  ],
   "dependencies": {
     "core-js": "^3.4.4",
     "vue": "^2.6.10",
