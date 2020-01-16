@@ -160,13 +160,13 @@
       </el-table-column>
     </el-table>
 
-    <!--<pagination-->
-      <!--v-show="total>0"-->
-      <!--:total="total"-->
-      <!--:page.sync="listQuery.current"-->
-      <!--:limit.sync="listQuery.size"-->
-      <!--@pagination="getList()"-->
-    <!--/>-->
+    <pagination
+      v-show="total>0"
+      :total="total"
+      :page.sync="listQuery.current"
+      :limit.sync="listQuery.size"
+      @pagination="getList()"
+    />
 
     <el-dialog
       :title="dialogStatus === 'create' ? '新增用户信息' : '修改用户信息'"
@@ -185,14 +185,14 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator'
-// import { getUsers, delUser, changeEnabled } from '@/api/users'
-// import Pagination from '@/components/Pagination/index.vue'
+import { getUsers, delUser, changeEnabled } from '@/api/users'
+import Pagination from '@/components/Pagination/index.vue'
 // import UserView from '@/views/system/user/userInfo.vue'
 
 @Component({
   name: 'User',
   components: {
-    // Pagination,
+    Pagination
     // UserView
   }
 })
@@ -215,13 +215,13 @@ export default class User extends Vue {
 
   private async getList () {
     this.listLoading = true
-    // const { data } = await getUsers(this.listQuery)
-    // this.list = data.records
-    // this.total = data.total
-    // // Just to simulate the time of the request
-    // setTimeout(() => {
-    //   this.listLoading = false
-    // }, 0.5 * 1000)
+    const { data } = await getUsers(this.listQuery)
+    this.list = data.records
+    this.total = data.total
+    // Just to simulate the time of the request
+    setTimeout(() => {
+      this.listLoading = false
+    }, 0.5 * 1000)
   }
 
   private enabledChange (_id: string, value: boolean) {

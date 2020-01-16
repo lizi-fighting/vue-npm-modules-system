@@ -18,19 +18,24 @@
     "types/*"
   ],
   "dependencies": {
+    "@types/js-base64": "^2.3.1",
+    "@types/js-cookie": "^2.2.4",
+    "axios": "^0.19.1",
     "core-js": "^3.4.4",
+    "js-base64": "^2.5.1",
+    "js-cookie": "^2.2.1",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.3.0"
   },
   "devDependencies": {
-    "element-ui": "^2.12.0",
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-eslint": "^4.1.0",
     "@vue/cli-plugin-typescript": "^4.1.0",
     "@vue/cli-service": "^4.1.0",
     "@vue/eslint-config-standard": "^4.0.0",
     "@vue/eslint-config-typescript": "^4.0.0",
+    "element-ui": "^2.12.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "less": "^3.0.4",
