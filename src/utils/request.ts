@@ -2,12 +2,11 @@ import axios from 'axios'
 import { Message, MessageBox } from 'element-ui'
 // import { UserModule } from '@/store/modules/user'
 import { ResponseError } from '@/utils/ResponseError'
-import { Base64 } from 'js-base64'
-import { getToken } from '@/utils/cookies'
+import { getToken, getBaseApi } from '@/utils/cookies'
 // import { response } from "express"
 
 const service = axios.create({
-  baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
+  baseURL: getBaseApi() || '', // url = base url + request url
   timeout: 10000
   // withCredentials: true // send cookies when cross-domain requests
 })
@@ -15,14 +14,14 @@ const service = axios.create({
 // Request interceptors
 service.interceptors.request.use(
   (config) => {
-    config.headers['Authorization'] = `Basic ${Base64.encode('system:system_secret')}`
+    // config.headers['Authorization'] = `Basic ${Base64.encode('system:system_secret')}`
     // Add X-Access-Token header to every request, you can add other custom headers here
     let token = getToken()
-    if (token) {
-      // config.headers['X-Access-Token'] = 'Bearer ' + UserModule.token
-      // config.headers['X-Token'] = 'Bearer ' + UserModule.token
-      config.headers['Authorization'] = 'Bearer ' + token
-    }
+    // if (token) {
+    config.headers['X-Access-Token'] = 'Bearer ' + token
+    config.headers['X-Token'] = 'Bearer ' + token
+    config.headers['Authorization'] = 'Bearer ' + token
+    // }
 
     return config
   },
