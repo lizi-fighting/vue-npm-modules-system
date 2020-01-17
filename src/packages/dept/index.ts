@@ -1,3 +1,3 @@
-import Dept from './Dept.vue'
+import Dept from './index.vue'
 
 export default Dept
