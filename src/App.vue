@@ -10,12 +10,10 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import HelloWorld from './components/HelloWorld.vue'
 import { User, Dept } from './packages/index'
 
 @Component({
   components: {
-    HelloWorld,
     User,
     Dept
   }

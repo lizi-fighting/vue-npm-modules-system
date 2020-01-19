@@ -1,6 +1,6 @@
 {
   "name": "vue-npm-modules-system",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -16,15 +16,16 @@
   "files": [
     "types/*",
     "src/api/*",
-    "src/packages/*"
+    "src/packages/*",
+    "src/router/*"
   ],
   "dependencies": {
     "core-js": "^3.4.4",
+    "less": "^3.0.4",
+    "less-loader": "^5.0.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
-    "vue-property-decorator": "^8.3.0",
-    "less": "^3.0.4",
-    "less-loader": "^5.0.0"
+    "vue-property-decorator": "^8.3.0"
   },
   "devDependencies": {
     "@types/js-base64": "^2.3.1",
@@ -42,6 +43,7 @@
     "js-base64": "^2.5.1",
     "js-cookie": "^2.2.1",
     "typescript": "~3.5.3",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "vue-router": "^3.1.5"
   }
 }
