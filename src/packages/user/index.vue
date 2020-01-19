@@ -185,7 +185,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator'
-import { getUsers, delUser, changeEnabled } from '@/api/users'
+import { getUsers, delUser, changeEnabled } from '../../api/users'
 import Pagination from '@/components/Pagination/index.vue'
 // import UserView from '@/views/system/user/userInfo.vue'
 

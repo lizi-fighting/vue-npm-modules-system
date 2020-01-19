@@ -3,10 +3,11 @@ import { Message, MessageBox } from 'element-ui'
 // import { UserModule } from '@/store/modules/user'
 import { ResponseError } from '@/utils/ResponseError'
 import { getToken, getBaseApi } from '@/utils/cookies'
+import { config } from '@/config'
 // import { response } from "express"
 
 const service = axios.create({
-  baseURL: getBaseApi() || '', // url = base url + request url
+  baseURL: config.api_address || '', // url = base url + request url
   timeout: 10000
   // withCredentials: true // send cookies when cross-domain requests
 })
@@ -70,7 +71,7 @@ service.interceptors.response.use(
     }
   },
   (error) => {
-    console.log(error)
+    // console.log(error)
 
     let msg = ''
     if (error.code && error.code === 'ECONNABORTED') {
